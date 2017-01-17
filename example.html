@@ -63,7 +63,7 @@
       overflow-y:scroll;
       }
 
-      #copy{
+      .btn-copy{
         margin-top: 15px;
       }
 
@@ -86,7 +86,7 @@
 
 				<div class="form-group">
 				    <label for="">Correo</label>
-				    <input id="mail" type="mail" name="textInput" class="form-control" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+				    <input id="mail" type="text" name="textInput" class="form-control" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
 				required/>
 					<div id="mailError" class="errors"></div>
 				</div>
@@ -114,20 +114,6 @@
 
   	<div class="col-sm-8">
 	  	<div class="gordon clearfix">
-	  		<!--<table width="600" border="1" cellspacing="0">
-		  		<tr>
-		  			<td width="50%">Nombre</td>
-		  			<td class="textOutput"></td>
-		  		</tr>
-		  		<tr>
-		  			<td>Mail</td>
-		  			<td class="textOutput2"></td>
-		  		</tr>
-		  		<tr>
-		  			<td>Teléfono</td>
-		  			<td class="textOutput3"></td>
-		  		</tr>
-	  		</table>-->
 
         <h2>Firma de correo electrónico</h2>
         
@@ -173,13 +159,16 @@
   	  		</table>
         </div>
 
-        <a href="#" id="copy" class="btn btn-success">Generar HTML</a>
+        <button class="btn btn-default btn-copy">Copiar firma</button>
 
 	  	</div>
+      
 
-      <xmp id="red">
-        
-      </xmp>
+      <div id="html-c" class="gordon">
+        <button class="btn btn-default btn-copy2">Copiar firma en HTML</button>
+        <xmp id="red">
+        </xmp>
+      </div>
 	</div>
 
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
@@ -209,13 +198,14 @@
   		    };
 
   		$("#phone").ForceNumericOnly();
+      $("#celphone").ForceNumericOnly();
 
   		$("#nameError").hide();
   		$("#phoneError").hide();
   		$("#mailError").hide();
   		$("#celphoneError").hide();
-      $('#copy').hide();
-      $('#red').hide();
+      $('#html-c').hide();
+      $(".btn-copy, .btn-copy2").hide();
 
   		var nameErrorMessage = false;
   		var mailErrorMessage = false;
@@ -275,16 +265,42 @@
   			}
         if(mail != "" && phone != "" && celphone != "" && name != "")
         {
-          $('#red').show();
+          $('#html-c').show();
           $("#red").empty();
           $("#red").html(codigo);
+          $(".btn-copy, .btn-copy2").show();
         }
 
 
   		});
   	});
   	</script>
-    
+    <script src="js/clipboard.js"></script>
+
+    <!-- 1. Define some markup -->
+
+    <!-- 3. Instantiate clipboard -->
+    <script>
+    var clipboard = new Clipboard('.btn-copy', {
+        target: function() {
+            return document.querySelector('#table');
+        }
+    });
+
+    var clipboard = new Clipboard('.btn-copy2', {
+        target: function() {
+            return document.querySelector('#red');
+        }
+    });
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    </script>
 
   </body>
 </html>
