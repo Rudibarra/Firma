@@ -234,6 +234,11 @@
   			var celphone = $("#celphone").val().length;
 
 
+        var codigo = $('#table').html();
+
+
+
+
   			if(name ==""){
   				$("#nameError").html("Información requerida");
   				$("#nameError").show();
@@ -241,6 +246,9 @@
   				$("#nameError").hide();
   		      	$(".textOutput").html(playerName);
   		      	nameErrorMessage = true;
+
+                        $('#red').show();
+          $("#red").text(codigo);
   			}
 
   			if(mail ==""){
@@ -250,6 +258,9 @@
   				$("#mailError").hide();
   				$(".textOutput2").html(playerMail);
   				mailErrorMessage = true;
+
+                    $('#red').show();
+          $("#red").text(codigo);
   			}
 
   			if(phone ==""){
@@ -259,6 +270,9 @@
   				$("#phoneError").hide();
   				$(".textOutput3").html(playerPhone);
   				phoneErrorMessage = true;
+
+          $('#red').show();
+          $("#red").text(codigo);
   			}
 
   			if(celphone ==""){
@@ -268,15 +282,12 @@
   				$("#celphoneError").hide();
   				$(".textOutput4").html(playerCelPhone);
   				celphoneErrorMessage = true;
-  			}
 
-        $('#copy').show();
-
-        var codigo = $('#table').html();
-        $('#copy').click(function(){
           $('#red').show();
           $("#red").text(codigo);
-        });
+  			}
+
+
 
 
   		});
