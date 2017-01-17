@@ -65,9 +65,11 @@
 
       .btn-copy{
         margin-top: 15px;
+        margin-bottom: 15px;
+
       }
 
-      h2{
+      h2, h3{
         padding: 0 0 15px 0;
         margin:0 0 15px 0;
         border-bottom: 1px solid #CCCCCC;
@@ -77,8 +79,15 @@
   <body>
     <div class="container">
       <div class="row">
+        <div class="col-sm-12">
+          <h1>Firma de correo electrónico</h1>
+        </div>
+      </div>
+      <div class="row">
       	<div class="col-sm-3">
       		<div class="gordon">
+
+          <h3>Información requerida</h3>
     	    	<form name="userInput">
     		      	<div class="form-group">
     		      	  <label for="">Nombre y Apellido</label>
@@ -117,8 +126,10 @@
       	<div class="col-sm-8">
     	  	<div class="gordon clearfix">
 
-            <h2>Firma de correo electrónico</h2>
+            <h3>Previsualización</h3>
             
+            <button class="btn btn-default btn-copy">Copiar firma</button>
+
             <div id="table">
       	  		<table  border="0" cellpadding="0" cellspacing="0" width="700" align="left" style="font-family:sans-serif; font-size:14px">
       	  			<tbody>
@@ -160,8 +171,6 @@
       	  			</tbody>
       	  		</table>
             </div>
-
-            <button class="btn btn-default btn-copy">Copiar firma</button>
 
     	  	</div>
           
