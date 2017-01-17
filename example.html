@@ -228,16 +228,13 @@
   			var playerPhone = $('#phone').val();
   			var playerCelPhone = $('#celphone').val();
 
-  			var name = $("#name").val().length;
-  			var mail = $("#mail").val().length;
-  			var phone = $("#phone").val().length;
-  			var celphone = $("#celphone").val().length;
+  			var name = $("#name").val();
+  			var mail = $("#mail").val();
+  			var phone = $("#phone").val();
+  			var celphone = $("#celphone").val();
 
 
         var codigo = $('#table').html();
-
-
-
 
   			if(name ==""){
   				$("#nameError").html("Información requerida");
@@ -246,9 +243,6 @@
   				$("#nameError").hide();
   		      	$(".textOutput").html(playerName);
   		      	nameErrorMessage = true;
-
-                        $('#red').show();
-          $("#red").text(codigo);
   			}
 
   			if(mail ==""){
@@ -258,9 +252,6 @@
   				$("#mailError").hide();
   				$(".textOutput2").html(playerMail);
   				mailErrorMessage = true;
-
-                    $('#red').show();
-          $("#red").text(codigo);
   			}
 
   			if(phone ==""){
@@ -271,8 +262,6 @@
   				$(".textOutput3").html(playerPhone);
   				phoneErrorMessage = true;
 
-          $('#red').show();
-          $("#red").text(codigo);
   			}
 
   			if(celphone ==""){
@@ -283,11 +272,13 @@
   				$(".textOutput4").html(playerCelPhone);
   				celphoneErrorMessage = true;
 
-          $('#red').show();
-          $("#red").text(codigo);
   			}
-
-
+        if(mail != "" && phone != "" && celphone != "" && name != "")
+        {
+          $('#red').show();
+          $("#red").empty();
+          $("#red").html(codigo);
+        }
 
 
   		});
