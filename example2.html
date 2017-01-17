@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ejemplo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      .gordon{
+        background: #ececec;
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 4px;
+      }
+
+      .errors{
+        display: inline-block;
+        padding: 4px ;
+        color:#ffffff;
+        /*background-color: #d00011;*/
+        background-color: rgba(208, 0, 17, 0.44);
+        font-size: 12px;
+        margin-top: 0px;
+      }
+
+      .arrow-up {
+      width: 0; 
+      height: 0; 
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid rgba(208, 0, 17, 0.44);
+    }
+
+    .btn-success, .btn-default{
+      width: 100%;
+      font-size: 15px;
+      padding: 10px 15px;
+    }
+
+    .btn-default{
+      background-color: #333333 !important;
+      color: #ffffff !important;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="col-sm-3">
+      <div class="gordon">
+        <form name="userInput">
+            <div class="form-group">
+              <label for="">Nombre</label>
+              <input  id="name" type="text" name="textInput" class="form-control" />
+        </div>
+
+        <div class="form-group">
+              <label for="">Correo</label>
+              <input id="mail" type="text" name="textInput" class="form-control" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+    required/>
+            </div>
+
+            <div class="form-group">
+              <label>Telefono</label>
+              <input id="phone" type="text" name="textInput" class="form-control" />
+            </div>
+
+             <a href="#" id="confirm" class="btn btn-success">Confirm</a>
+
+             <a href="#" id="reload" class="btn btn-default">Limpiar Template</a>
+          </form>
+      </div>
+  </div>
+
+    <div class="col-sm-8">
+      <div class="gordon">
+        <table width="600" border="1" cellspacing="0">
+        <tr>
+          <td width="50%">Nombre</td>
+          <td class="textOutput"></td>
+        </tr>
+        <tr>
+          <td>Teléfono</td>
+          <td class="textOutput2"></td>
+        </tr>
+        <tr>
+          <td>Correo</td>
+          <td class="textOutput3"></td>
+        </tr>
+      </table>
+      </div>
+  </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+  <script src="js/bootstrap.js"></script>
+    <script>
+    $(function (){
+      $('#reload').hide();
+
+      jQuery.fn.ForceNumericOnly =
+          function() {
+              return this.each(function() {
+                  $(this).keydown(function(e) {
+                      var key = e.charCode || e.keyCode || 0;
+                      // allow backspace, tab, delete, enter, arrows, numbers and keypad numbers ONLY
+                      // home, end, period, and numpad decimal
+                      return (
+                          key == 8 ||
+                          key == 9 ||
+                          key == 13 ||
+                          key == 46 ||
+                          key == 110 ||
+                          key == 190 ||
+                          (key >= 35 && key <= 40) ||
+                          (key >= 48 && key <= 57) ||
+                          (key >= 96 && key <= 105));
+                  });
+              });
+          };
+
+      $("#phone").ForceNumericOnly();
+
+      $('#confirm').click(function(){
+        var errors = false;
+        if ($('#name').val() == ""){
+          $('#name').after('<span class="errors">Campo Requerido</span>')
+          errors= true;
+        }
+
+        if ($('#mail').val() == ""){
+          $('#mail').after('<span class="errors">Campo Requerido</span>')
+          errors= true;
+        }
+
+        if ($('#phone').val() == ""){
+          $('#phone').after('<span class="errors">Campo Requerido</span>')
+          errors= true;
+        }
+
+        if (errors == true){
+          return false;
+          $('.errors').hide();
+        }else{
+          var playerName = $('#name').val();
+          $(".textOutput").append("<p>" + playerName + "</p>");
+
+                  var playerName = $('#mail').val();
+          $(".textOutput2").append("<p>" + playerName + "</p>");
+
+
+                  var playerName = $('#phone').val();
+          $(".textOutput3").append("<p>" + playerName + "</p>");
+
+          $(".errors").hide();
+
+          $(this).hide();
+
+          $('#reload').show();
+        }
+      });
+
+      $('#reload').click(function() {
+          location.reload();
+      });
+
+    });
+    </script>
+
+
+  </body>
+</html>
+
+
