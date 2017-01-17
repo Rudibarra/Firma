@@ -47,12 +47,19 @@
 			width: 100%;
 			font-size: 15px;
 			padding: 10px 15px;
+      font-size: 18px;
 		}
 
 		.btn-default{
 			background-color: #333333 !important;
 			color: #ffffff !important;
 		}
+
+    h2{
+      padding: 0 0 15px 0;
+      margin:0 0 15px 0;
+      border-bottom: 1px solid #CCCCCC;
+    }
     </style>
   </head>
   <body>
@@ -80,13 +87,13 @@
 		        </div>
 
 		         <div class="form-group">
-		           <label>Teléfono Móvil</label>
+		           <label>Teléfono móvil</label>
 		           <input id="celphone" type="text" name="textInput" class="form-control" maxlength="20" />
 		           <div id="celphoneError" class="errors"></div>
 		         </div>
 
 
-		         <a href="#" id="confirm" class="btn btn-success">Cambiar datos</a>
+		         <a href="#" id="confirm" class="btn btn-success">Generar firma</a>
 
 	      	</form>
 	    </div>
@@ -108,6 +115,8 @@
 		  			<td class="textOutput3"></td>
 		  		</tr>
 	  		</table>-->
+
+        <h2>Firma de correo electrónico</h2>
 
 	  		<table border="0" cellpadding="0" cellspacing="0" width="700" align="left" style="font-family:sans-serif; font-size:14px">
 	  			<tbody>
