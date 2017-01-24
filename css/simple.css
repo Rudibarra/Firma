@@ -1,0 +1,128 @@
+  	.gordon{
+  		background: #ececec;
+  		padding: 15px;
+  		margin-top: 15px;
+  		border-radius: 4px;
+  	}
+
+  	.errors{
+  		display:block;
+  		padding: 4px ;
+  		color:#ffffff;
+  		/*background-color: #d00011;*/
+  		background-color: rgba(208, 0, 17, 0.8);
+  		font-size: 12px;
+  		margin-top: 3px;
+  	}
+
+    .arrow-up {
+		  width: 0; 
+		  height: 0; 
+		  border-left: 5px solid transparent;
+		  border-right: 5px solid transparent;
+		  border-bottom: 5px solid rgba(208, 0, 17, 0.44);
+		}
+
+		.btn-success, .btn-default{
+			width: 100%;
+			font-size: 15px;
+			padding: 10px 15px;
+      font-size: 18px;
+		}
+
+		.btn-default{
+			background-color: #333333 !important;
+			color: #ffffff !important;
+		}
+
+
+    .navbar{
+      margin-bottom: 5px;
+    }
+
+    #red{
+      display: block;
+      background: white;
+      border: 1px solid #CCCCCC;
+      padding: 15px;
+      overflow:scroll;
+      height: 300px;
+      margin: 0 0 15px 0;
+    }
+
+    .btn-copy{
+      margin-top: 15px;
+    }
+
+    hr{
+          border-top: 1px solid #CCCCCC;
+    }
+    
+     h3, h4{
+      padding: 0 0 15px 0;
+      margin:0 0 15px 0;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+
+    .cw50{
+      width: 50%;
+    }
+
+    .hardcore{
+      font-weight: bold;
+    }
+
+
+    .modal-header {
+        padding: 15px 15px 0px 15px;
+        border-bottom: none;
+    }
+
+    .modal-header h3{
+      padding: 0 0 0px 0;
+      margin:0 0 0px 0;
+      border-bottom: none;
+    }
+
+    .nav-pills li{
+      width: 33.18%;
+      background-color: #ececec;
+
+    }
+
+    .nav-pills li a{
+      font-size: 22px;
+      color: #CCCCCC;
+    }
+
+    .modal-body{
+      padding: 0 15px 15px 15px;
+    }
+
+    .modal-body .tab-content .btn-default{
+      width: auto;
+      font-size: 14px;
+    }
+
+    .modal-body .tab-content .btn-success{
+      width: auto;
+      font-size: 16px;
+    }
+
+
+    .modal-body .tab-content .tab-pane{
+      padding: 15px;
+    }
+
+    .modal-body .tab-content .tab-pane p{
+      font-size: 18px;
+    }
+
+    .img-wrapper{
+    }
+
+    .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+        color: #fff;
+        background-color: #333333;
+    }
