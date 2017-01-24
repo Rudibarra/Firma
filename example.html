@@ -24,6 +24,7 @@
       <div class="row">
         <div class="col-sm-12">
           <h2>Firma de correo electrónico</h2>
+          <a href="#myModal" data-target="#myModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">Ver instrucciones</a>
         </div>
       </div>
       <div class="row">
@@ -58,7 +59,7 @@
   		        </div>
 
 		          <div class="form-group">
-		            <label>Teléfono móvil</label>
+		            <label>Teléfono móvil (opcional)</label>
 		            <input id="celphone" type="text" name="textInput" class="form-control" maxlength="20" />
 		            <div id="celphoneError" class="errors"></div>
 		          </div>
@@ -91,7 +92,7 @@
       	  				<tr>
       	  					<td valign="top" height="37">
       	  						<font color="#54534A"><strong><strong style="font-family:sans-serif; font-size:14px"><font>T</font><font color="#F58025" style="color:rgb(84,83,74)"><strong style="color:rgb(84,83,74); font-family:sans-serif; font-size:14px"><font color="#F58025">.</font></strong></font></strong></strong>&nbsp;+52 (81) 2187 4000&nbsp;&nbsp;<strong>Ext<font color="#F58025">.</font></strong>&nbsp;<span class="textOutput3">0000</span><br>
-      	  						<strong>C<font color="#F58025">.</font></strong>&nbsp;<span class="textOutput4">000 (00) 0000 0000</span></font>
+      	  						<span id="option"><strong>C<font color="#F58025">.</font></strong>&nbsp;<span class="textOutput4">000 (00) 0000 0000</span></font></span>
       	  					</td>
       	  				</tr>
 
@@ -174,7 +175,7 @@
               </div>
               <div class="tab-pane fade clearfix" id="step3">
                 <p>
-                  Sigue las instrucciones indicas dependiendo del tipo de cliente de correo que utilizes.
+                  Sigue las instrucciones indicadas, según el tipo de cliente de correo que utilizes.
                 </p>
 
                 <div class="box">
@@ -235,19 +236,20 @@
     <script src="js/bootstrap.js"></script>
   	<script>
 
-      $(document).ready(function(){
+
+
+      $(document).ready(function(){        
+        $('#myModal').modal({backdrop: 'static', keyboard: false})  
         $('[data-toggle="tooltip"]').tooltip();   
 
-        $(window).load(function(){
-            $('#myModal').modal('show');
-        });
+
 
         $('.next').click(function(){
           var nextId = $(this).parents('.tab-pane').next().attr("id");
           $('[href=#'+nextId+']').tab('show');
           return false;
         })
-        
+
         
         $('.first').click(function(){
         
@@ -344,13 +346,9 @@
   			}
 
   			if(celphone ==""){
-  				$("#celphoneError").html("Información requerida");
-  				$("#celphoneError").show();
+  				$("#option").hide()
   			} else{
-  				$("#celphoneError").hide();
   				$(".textOutput4").html(playerCelPhone);
-  				celphoneErrorMessage = true;
-
   			}
 
         if(lastName ==""){
