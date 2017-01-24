@@ -1,4 +1,39 @@
-  	.gordon{
+  	.navigation00{
+      display:block;
+      margin-top: 15px;
+      background-color: #ececec;
+      border-radius: 4px;
+    }
+
+    .fake-tabs{
+      display: block;
+      width: 100%;
+      color: #CCCCCC !important;
+      font-size: 24px;
+      padding: 10px 0;
+      text-align: center;
+      cursor: pointer;
+      outline: none !important ;
+      text-decoration: none !important;
+      border-right: 1px solid #CCCCCC;
+    }
+
+    .no-border-right{
+      border-right: none;
+    }
+
+    .fake-tabs:hover{
+      background-color: #d4d4d4;
+      cursor: pointer;
+      color: #929292 !important;
+    }
+
+    .navigation00 .active{
+      background: #333333 !important;
+      color: #ffffff !important;
+    }
+
+    .gordon{
   		background: #ececec;
   		padding: 15px;
   		margin-top: 15px;
@@ -125,4 +160,11 @@
     .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
         color: #fff;
         background-color: #333333;
+    }
+
+
+    .scroll-box{
+      display: block;
+      overflow: scroll;
+      background: white;
     }
