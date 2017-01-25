@@ -167,4 +167,12 @@
       display: block;
       overflow: scroll;
       background: white;
+      padding: 15px;
+    }
+
+    @media (max-width: 991px) {
+       .nav-pills li {
+           width: 32.8%;
+           background-color: #ececec;
+       }
     }
